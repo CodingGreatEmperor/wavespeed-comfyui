@@ -9,6 +9,7 @@ from .velocator_nodes import (
     VelocatorLoadAndQuantizeDiffusionModel,
     VelocatorQuantizeModel,
 )
+from .quantize_nodes import FluxAccelerator
 
 
 def patch_cast_to():
@@ -33,6 +34,7 @@ def patch_cast_to():
 patch_cast_to()
 
 NODE_CLASS_MAPPINGS = {
+    "FluxAccelerator": FluxAccelerator,
     "ApplyFBCacheOnModel": ApplyFBCacheOnModel,
     "EnhancedLoadDiffusionModel": EnhancedLoadDiffusionModel,
     "EnhancedCompileModel": EnhancedCompileModel,
@@ -43,6 +45,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
+    "FluxAccelerator": "🚀FluxAccelerator",
     "ApplyFBCacheOnModel": "Apply First Block Cache",
     "EnhancedLoadDiffusionModel": "Load Diffusion Model+",
     "EnhancedCompileModel": "Compile Model+",
